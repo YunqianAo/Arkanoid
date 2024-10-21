@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 2095459402}
   - component: {fileID: 2095459401}
   m_Layer: 0
-  m_Name: "\u2593y\xAE\xFE"
+  m_Name: racket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
