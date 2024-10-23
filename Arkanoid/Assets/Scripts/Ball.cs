@@ -36,9 +36,9 @@ public class Ball : MonoBehaviour
         ballRigidbody2D = GetComponent<Rigidbody2D>();
         ballCircleCollider2D = GetComponent<CircleCollider2D>();
 
-        //切換成Kinematic模式
-        //Uity 2018版以後不加這行的話 發球之前球會無法跟著球拍移動
-        ballRigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+        ////切換成Kinematic模式
+        ////Uity 2018版以後不加這行的話 發球之前球會無法跟著球拍移動
+        //ballRigidbody2D.bodyType = RigidbodyType2D.Kinematic;
 
         scoreText.text = "目前分數：";
         Invoke("ballStart", 1);
