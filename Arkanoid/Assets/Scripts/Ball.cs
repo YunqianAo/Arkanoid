@@ -36,9 +36,7 @@ public class Ball : MonoBehaviour
         ballRigidbody2D = GetComponent<Rigidbody2D>();
         ballCircleCollider2D = GetComponent<CircleCollider2D>();
 
-        ////切換成Kinematic模式
-        ////Uity 2018版以後不加這行的話 發球之前球會無法跟著球拍移動
-        //ballRigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+        
 
         scoreText.text = "score：";
         Invoke("ballStart", 1);
@@ -46,11 +44,10 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-        #region 教學理解用 可不寫
+        
         velocityX = ballRigidbody2D.velocity.x;
         velocityY = ballRigidbody2D.velocity.y;
-        #endregion
-
+       
         if (Input.GetKey(KeyCode.Space))
         {
             ballStart();
@@ -80,6 +77,9 @@ public class Ball : MonoBehaviour
         lockSpeed();
         if (other.gameObject.CompareTag(tags.brick.ToString()))
         {
+            GameManager.brickscount--;
+            Debug.Log("brickscountnow"+GameManager.brickscount);
+            GameManager.CheckLevelClearOrNot();
             other.gameObject.SetActive(false);
             score += 10;
             scoreText.text = "score：" + score;
