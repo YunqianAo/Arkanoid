@@ -17,13 +17,7 @@ public class Ball : MonoBehaviour
     [Header("垂直速度")]
     public float speedY;
 
-    #region 教學理解用 可不寫
-    [Header("實際水平速度")]
-    public float velocityX;
-
-    [Header("實際垂直速度")]
-    public float velocityY;
-    #endregion
+    
 
     enum tags
     {
