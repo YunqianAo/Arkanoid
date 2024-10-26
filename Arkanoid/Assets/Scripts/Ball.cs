@@ -27,8 +27,8 @@ public class Ball : MonoBehaviour
 
     enum tags
     {
-        磚塊,
-        背景
+        wall,
+        brick
     }
 
     void Start()
@@ -40,7 +40,7 @@ public class Ball : MonoBehaviour
         ////Uity 2018版以後不加這行的話 發球之前球會無法跟著球拍移動
         //ballRigidbody2D.bodyType = RigidbodyType2D.Kinematic;
 
-        scoreText.text = "目前分數：";
+        scoreText.text = "score：";
         Invoke("ballStart", 1);
     }
 
@@ -65,8 +65,7 @@ public class Ball : MonoBehaviour
             transform.SetParent(null);
             ballRigidbody2D.velocity = new Vector2(speedX, speedY);
 
-            //Unity 2018以後的版本需要加下面這行：
-            //改回預設的Dynamic，使用Unity內建的物理運動規則
+            
             ballRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         }
     }
@@ -79,11 +78,11 @@ public class Ball : MonoBehaviour
     void OnCollisionExit2D(Collision2D other)
     {
         lockSpeed();
-        if (other.gameObject.CompareTag(tags.磚塊.ToString()))
+        if (other.gameObject.CompareTag(tags.brick.ToString()))
         {
             other.gameObject.SetActive(false);
             score += 10;
-            scoreText.text = "目前分數：" + score;
+            scoreText.text = "score：" + score;
         }
 
     }

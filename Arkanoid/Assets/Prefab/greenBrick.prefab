@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 61582211244546368}
   m_Layer: 0
   m_Name: greenBrick
-  m_TagString: "\u78DA\u584A"
+  m_TagString: brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
